@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mchajii.interviewquestions</groupId>
+    <groupId>com.mchajii.interview</groupId>
     <artifactId>interview-questions</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -21,6 +21,7 @@
 
     <modules>
         <module>trading-stock</module>
+        <module>phone-agenda</module>
     </modules>
 
     <dependencies>

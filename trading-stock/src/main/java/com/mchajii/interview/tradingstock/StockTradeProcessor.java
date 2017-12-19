@@ -1,4 +1,4 @@
-package com.mchajii.interviewquestions.tradingstock;
+package com.mchajii.interview.tradingstock;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,13 +19,13 @@ final class StockTradeProcessor {
 	 * sale of 1 ING stock yesterday.
      * Time complexity: O(n) - Space complexity: O(1).
 	 * 
-	 * @param stockPricesYesterday
-	 *            the list of stock prices of yesterday
+	 * @param stockPricesYesterday the list of stock prices of yesterday
 	 * @return the max profit
-	 * @throws IllegalArgumentException
-	 *             in case an invalid list of stock prices is provided
+	 * @throws IllegalArgumentException in case an invalid list of stock prices is provided as input
 	 */
 	static int getMaxProfit(int[] stockPricesYesterday) {
+
+	    // Using an array of int is faster than a Collection of Integer (boxed ints).
 
 		validate(stockPricesYesterday);
 

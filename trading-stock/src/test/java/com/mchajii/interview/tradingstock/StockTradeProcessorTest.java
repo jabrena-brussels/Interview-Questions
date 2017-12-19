@@ -1,4 +1,4 @@
-package com.mchajii.interviewquestions.tradingstock;
+package com.mchajii.interview.tradingstock;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -9,22 +9,22 @@ import org.junit.jupiter.api.Test;
 class StockTradeProcessorTest {
 
 	@Test
-	void shouldThrowExceptionWhenStockPricesIsNull() {
+	void shouldThrowExceptionWhenStockPricesArrayIsNull() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> StockTradeProcessor.getMaxProfit(null));
 	}
 
 	@Test
-	void shouldThrowExceptionWhenStockPricesIsEmpty() {
+	void shouldThrowExceptionWhenStockPricesArrayIsEmpty() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> StockTradeProcessor.getMaxProfit(new int[]{}));
 	}
 
 	@Test
-	void shouldThrowExceptionWhenStockPricesSizeIsLessThanTwo() {
+	void shouldThrowExceptionWhenStockPricesArraySizeIsLessThanTwo() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> StockTradeProcessor.getMaxProfit(new int[]{1}));
 	}
 
 	@Test
-	void shouldReturnMaxProfit() {
+	void shouldReturnCorrectMaxProfit() {
 		Assertions.assertAll("Compute max profit",
 				() -> Assertions.assertEquals(StockTradeProcessor.getMaxProfit(new int[]{10, 7, 5, 8, 11, 9}), 6), // random array of stock prices
                 () -> Assertions.assertEquals(StockTradeProcessor.getMaxProfit(new int[]{10, 2}), -8), // we can have a negative profit
