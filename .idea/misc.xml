@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="EclipseCodeFormatter">
-    <option name="defaultSettings" value="true" />
-    <option name="enableJSFormatting" value="true" />
-    <option name="formatSeletedTextInAllFileTypes" value="false" />
-    <option name="formatter" value="ECLIPSE" />
-    <option name="id" value="1512125717738" />
-    <option name="importOrderConfigFilePath" value="$USER_HOME$/Downloads/FedNot-Java-Formatter.xml" />
-    <option name="importOrderFromFile" value="true" />
-    <option name="name" value="default" />
-    <option name="pathToConfigFileJS" value="$USER_HOME$/Downloads/FedNot-Javascript-Formatter.xml" />
-    <option name="pathToConfigFileJava" value="$USER_HOME$/Downloads/FedNot-Java-OrganizeImport.importorder" />
-    <option name="selectedJavaScriptProfile" value="FedNot-Javascript-Formatter" />
-  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -20,7 +7,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" project-jdk-name="9.0" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
 </project>

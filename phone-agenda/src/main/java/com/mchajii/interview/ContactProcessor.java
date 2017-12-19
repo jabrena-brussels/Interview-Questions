@@ -7,20 +7,19 @@ package com.mchajii.interview;
  */
 final class ContactProcessor {
 
-	private ContactProcessor() {}
+    private ContactProcessor() {}
 
-	/**
-	 * Finds the index of the "changing point", which is where we start adding
-	 * guests from the beginning of the agenda.
+    /**
+     * Finds the index of the "changing point", which is where we start adding
+     * guests from the beginning of the agenda.
      *
-	 * 
-	 * @param guests the list of guests
-	 * @return the index of the "changing point"
+     * @param guests the list of guests
+     * @return the index of the "changing point"
      * @throws IllegalArgumentException in case an invalid list of guests is provided as input
-	 */
-	public static int findIndexChangingPoint(String[] guests) {
+     */
+    static int findIndexChangingPoint(String[] guests) {
 
-	    // The guest list that we receive is sorted but rotated. Therefore, we can use a modified version
+        // The guest list that we receive is sorted but rotated. Therefore, we can use a modified version
         // of the binary search algorithm to find the index of the "changing point" element.
 
         if (guests == null) {
@@ -31,7 +30,7 @@ final class ContactProcessor {
             return -1;
         }
 
-        int lowIndex  = 0;
+        int lowIndex = 0;
         int highIndex = guests.length - 1;
         int middleIndex; // To avoid constant memory allocation inside the loop.
 
@@ -47,5 +46,5 @@ final class ContactProcessor {
         }
 
         return lowIndex;
-	}
+    }
 }
