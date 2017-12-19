@@ -1,7 +1,4 @@
-package be.mchajii.tradingstock;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package com.mchajii.interviewquestions.tradingstock;
 
 import java.util.List;
 
@@ -10,8 +7,6 @@ import java.util.List;
  * @author Mohamed Chajii
  */
 final class StockTradeProcessor {
-
-    private static final Logger logger = LoggerFactory.getLogger(StockTradeProcessor.class);
 
     private StockTradeProcessor() {}
 
