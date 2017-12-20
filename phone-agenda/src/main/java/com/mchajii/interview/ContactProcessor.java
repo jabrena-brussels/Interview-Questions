@@ -1,5 +1,8 @@
 package com.mchajii.interview;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Central class to process the phone agenda.
  *
@@ -7,11 +10,14 @@ package com.mchajii.interview;
  */
 final class ContactProcessor {
 
-	private ContactProcessor() {}
+    private static final Logger logger = LoggerFactory.getLogger(ContactProcessor.class);
+
+    private ContactProcessor() {}
 
 	/**
 	 * Finds the index of the "changing point", which is where we start adding
 	 * guests from the beginning of the agenda.
+     * Time complexity: O(log n) - Space complexity: O(1).
      *
 	 * 
 	 * @param guests the list of guests
@@ -35,17 +41,31 @@ final class ContactProcessor {
         int highIndex = guests.length - 1;
         int middleIndex; // To avoid constant memory allocation inside the loop.
 
-        while (guests[lowIndex].compareTo(guests[highIndex]) > 0) {
+        int changingPointIndex = 0;
+
+        // Using an iterative solution instead of a recursive one allow us to reduce the space complexity.
+        while(lowIndex < highIndex) {
 
             middleIndex = lowIndex + (highIndex - lowIndex) / 2;
 
-            if (guests[middleIndex].compareTo(guests[highIndex]) > 0) {
+            if(middleIndex < highIndex && guests[middleIndex + 1].compareTo(guests[middleIndex]) < 0) {
+                changingPointIndex = middleIndex + 1;
+                break;
+            }
+
+            if(middleIndex > lowIndex && guests[middleIndex].compareTo(guests[middleIndex - 1]) < 0) {
+                changingPointIndex = middleIndex;
+                break;
+            }
+
+            if (guests[highIndex].compareTo(guests[middleIndex]) <= 0) {
                 lowIndex = middleIndex + 1;
             } else {
-                highIndex = middleIndex;
+                highIndex = middleIndex - 1;
             }
         }
 
-        return lowIndex;
+        logger.info("Changing point index = {} ({}).", changingPointIndex, guests[changingPointIndex]);
+        return changingPointIndex;
 	}
 }

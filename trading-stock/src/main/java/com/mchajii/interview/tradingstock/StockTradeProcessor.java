@@ -38,7 +38,7 @@ final class StockTradeProcessor {
 			minStockPrice = Math.min(minStockPrice, stockPricesYesterday[i]);
 		}
 
-        logger.info("The maximum calculated profit is '{}'", maxProfit);
+        logger.info("The maximum calculated profit is '{}'.", maxProfit);
 
 		return maxProfit;
 	}
