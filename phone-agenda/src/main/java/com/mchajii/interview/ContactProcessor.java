@@ -17,6 +17,11 @@ final class ContactProcessor {
     /**
      * Finds the index of the "changing point", which is where we start adding
      * guests from the beginning of the agenda.
+     * This implementation assumes that:
+     * <ul>
+     * <li> The list of guests does not contain null values.
+     * <li> The list of guests is sorted with a possible rotation.
+     * </ul>
      * Time complexity: O(log n) - Space complexity: O(1).
      *
      * @param guests the list of guests
