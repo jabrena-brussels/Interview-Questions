@@ -12,12 +12,12 @@ class ContactProcessorTest {
             "George", "Gregory", "Hugo", "James", "Julia", "Lara", "Noah", "Pamela", "Paul", "Pauline", "Salima", "Sandra", "Tudor"};
     
     @Test
-    void shouldThrowExceptionWhenGuestsArrayIsNull() {
+    void shouldThrowExceptionWhenGuestArrayIsNull() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> ContactProcessor.findIndexChangingPoint(null));
     }
 
     @Test
-    void shouldReturnNegativeValueForEmptyGuestsArray() {
+    void shouldReturnNegativeValueForEmptyGuestArray() {
         Assertions.assertEquals(ContactProcessor.findIndexChangingPoint(new String[]{}), -1);
     }
 

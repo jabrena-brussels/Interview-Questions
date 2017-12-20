@@ -9,17 +9,17 @@ import org.junit.jupiter.api.Test;
 class StockTradeProcessorTest {
 
     @Test
-    void shouldThrowExceptionWhenStockPricesArrayIsNull() {
+    void shouldThrowExceptionWhenStockPriceArrayIsNull() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> StockTradeProcessor.getMaxProfit(null));
     }
 
     @Test
-    void shouldThrowExceptionWhenStockPricesArrayIsEmpty() {
+    void shouldThrowExceptionWhenStockPriceArrayIsEmpty() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> StockTradeProcessor.getMaxProfit(new int[]{}));
     }
 
     @Test
-    void shouldThrowExceptionWhenStockPricesArraySizeIsLessThanTwo() {
+    void shouldThrowExceptionWhenStockPriceArraySizeIsLessThanTwo() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> StockTradeProcessor.getMaxProfit(new int[]{1}));
     }
 
