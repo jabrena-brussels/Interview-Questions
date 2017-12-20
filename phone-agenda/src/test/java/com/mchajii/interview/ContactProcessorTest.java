@@ -8,9 +8,8 @@ import java.util.Collections;
 
 class ContactProcessorTest {
 
-	private static final String[] guests = {"Adam", "Alesia", "Bridget", "Celine", "Charlie", "Diane", "Fabio",
-			"George", "Gregory", "Hugo", "James", "Julia", "Lara", "Noah", "Pamela", "Paul", "Pauline",
-            "Salima", "Sandra", "Tudor"};
+    private static final String[] guests = {"Adam", "Alesia", "Bridget", "Celine", "Charlie", "Diane", "Fabio",
+            "George", "Gregory", "Hugo", "James", "Julia", "Lara", "Noah", "Pamela", "Paul", "Pauline", "Salima", "Sandra", "Tudor"};
     
     @Test
     void shouldThrowExceptionWhenGuestsArrayIsNull() {
