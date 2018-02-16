@@ -25,7 +25,7 @@ public class SummableTest {
         final LinkedList linkedListResult = summable.sumTwoNumbers(linkedlistParam1, linkedlistParam2);
 
         final LinkedList<Integer> linkedlistExpectedResult = new LinkedList<Integer>();
-        linkedlistParam1.add(2);
+        linkedlistExpectedResult.add(2);
 
         assertThat(linkedlistExpectedResult, is(linkedListResult));
     }
