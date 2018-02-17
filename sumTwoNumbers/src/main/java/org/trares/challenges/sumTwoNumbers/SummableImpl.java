@@ -7,6 +7,10 @@ public class SummableImpl implements Summable {
 
     private int getParam(final LinkedList<String> param) {
 
+        if(param.size() == 0) {
+            throw new IllegalArgumentException("Bad List provided");
+        }
+
         final StringBuilder stringBuilder = new StringBuilder();
         param.stream()
             .collect(Collectors.toCollection(LinkedList::new))

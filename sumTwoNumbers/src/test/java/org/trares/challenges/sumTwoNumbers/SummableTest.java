@@ -40,11 +40,21 @@ public class SummableTest {
         assertThat(linkedListResult, is(linkedlistExpectedResult));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void sumWithNullParameterTest(){
 
         final LinkedList<String> linkedlistParam1 = new LinkedList<>();
         final LinkedList<String> linkedlistParam2 = NumberConverter.toLinkedList(10);
+
+        final Summable summable = new SummableImpl();
+        summable.sumTwoNumbers(linkedlistParam1, linkedlistParam2);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void sumWithNullSecondParameterTest(){
+
+        final LinkedList<String> linkedlistParam1 = NumberConverter.toLinkedList(10);
+        final LinkedList<String> linkedlistParam2 = new LinkedList<>();
 
         final Summable summable = new SummableImpl();
         summable.sumTwoNumbers(linkedlistParam1, linkedlistParam2);
