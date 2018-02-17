@@ -17,20 +17,6 @@ public class SummableImpl implements Summable {
         return Integer.parseInt(stringBuilder.toString());
     }
 
-    private LinkedList<String>  convertNumberToLinkedList(int number){
-
-        final String stringNumber = String.valueOf(number);
-
-        LinkedList<String> linkedListResult = new LinkedList<>();
-        stringNumber.chars()
-                .mapToObj(i -> (char) i)
-                .forEach( v -> {
-                    linkedListResult.addFirst(String.valueOf(v));
-                });
-
-        return linkedListResult;
-    }
-
     @Override
     public LinkedList<String> sumTwoNumbers(final LinkedList<String> l1, final LinkedList<String> l2) {
 
@@ -38,6 +24,6 @@ public class SummableImpl implements Summable {
         final int param2 = getParam(l2);
         final int sum = param1 + param2;
 
-        return convertNumberToLinkedList(sum);
+        return NumberConverter.toLinkedList(sum);
     }
 }
