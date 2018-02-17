@@ -4,6 +4,6 @@ import java.util.LinkedList;
 
 public interface Summable {
 
-    LinkedList<Integer> sumTwoNumbers(LinkedList<Integer> l1, LinkedList<Integer> l2);
+    LinkedList<String> sumTwoNumbers(LinkedList<String> l1, LinkedList<String> l2);
 
 }
