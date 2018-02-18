@@ -12,6 +12,8 @@ import static org.hamcrest.Matchers.is;
 @RunWith(JUnit4.class)
 public class SummableTest {
 
+    //OK
+
     @Test
     public void sumTwoNumbersWithSuccessTest() {
 
@@ -40,6 +42,8 @@ public class SummableTest {
         assertThat(linkedListResult, is(linkedlistExpectedResult));
     }
 
+    //Null Parameters
+
     @Test(expected = IllegalArgumentException.class)
     public void sumWithNullParameterTest(){
 
@@ -55,6 +59,32 @@ public class SummableTest {
 
         final LinkedList<String> linkedlistParam1 = NumberConverter.toLinkedList(10);
         final LinkedList<String> linkedlistParam2 = new LinkedList<>();
+
+        final Summable summable = new SummableImpl();
+        summable.sumTwoNumbers(linkedlistParam1, linkedlistParam2);
+    }
+
+    //Bad digits
+
+    @Test(expected = IllegalArgumentException.class)
+    public void sumWithBadListTest(){
+
+        final LinkedList<String> linkedlistParam1 = NumberConverter.toLinkedList(10);
+        final LinkedList<String> linkedlistParam2 = new LinkedList<>();
+        linkedlistParam2.addFirst(String.valueOf(0));
+        linkedlistParam2.addFirst(String.valueOf(-1));
+
+        final Summable summable = new SummableImpl();
+        summable.sumTwoNumbers(linkedlistParam1, linkedlistParam2);
+    }
+
+    //Extremme values to sum
+
+    @Test(expected = RuntimeException.class)
+    public void sumMaximumNumberTest(){
+
+        final LinkedList<String> linkedlistParam1 = NumberConverter.toLinkedList(10);
+        final LinkedList<String> linkedlistParam2 = NumberConverter.toLinkedList(2147483647);
 
         final Summable summable = new SummableImpl();
         summable.sumTwoNumbers(linkedlistParam1, linkedlistParam2);
