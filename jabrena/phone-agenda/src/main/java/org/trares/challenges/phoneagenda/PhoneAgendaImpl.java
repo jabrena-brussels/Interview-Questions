@@ -31,7 +31,7 @@ public class PhoneAgendaImpl implements PhoneAgenda {
             String current = partyList[x];
             String next = partyList[x+1];
 
-            LOGGER.info("{}", current.compareTo(next));
+            LOGGER.trace("Comparison result: {}", current.compareTo(next));
 
             if(current.compareTo(next) > 0) {
                 index = x+1;
