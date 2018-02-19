@@ -92,4 +92,23 @@ public class PhoneAgendaTest {
         assertThat(partyList[index], is("Adam"));
     }
 
+    @Test
+    public void partyListSortedCaseTest(){
+
+        final String[] partyList = {
+                "Adam", //<--> switching point
+                "Alesia",
+                "Bridget",
+                "Celine",
+                "Charlie",
+                "Diane",
+                "Fabio" };
+
+        final PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
+        final int index = phoneAgenda.getChangingPoint();
+
+        assertThat(index, is(0));
+        assertThat(partyList[index], is("Adam"));
+    }
+
 }
