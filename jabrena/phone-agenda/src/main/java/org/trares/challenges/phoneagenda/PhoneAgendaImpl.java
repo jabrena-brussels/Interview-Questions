@@ -9,7 +9,7 @@ public class PhoneAgendaImpl implements PhoneAgenda {
 
     public PhoneAgendaImpl(String[] partyList) {
 
-        if(partyList == null) {
+        if((partyList == null) || (partyList.length == 0)) {
             LOGGER.error("Bad partyList provided");
             throw new IllegalArgumentException("Bad partyList provided");
         }
