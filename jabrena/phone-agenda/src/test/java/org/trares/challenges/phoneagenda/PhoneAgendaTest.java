@@ -57,11 +57,19 @@ public class PhoneAgendaTest {
         "Diane",
         "Fabio" };
 
-        PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
+        final PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
         final int index = phoneAgenda.getChangingPoint();
 
         assertThat(index, is(13));
         assertThat(partyList[index], is("Adam"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void nullListTest(){
+
+        final String[] partyList = null;
+
+        final PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
     }
 
 }
