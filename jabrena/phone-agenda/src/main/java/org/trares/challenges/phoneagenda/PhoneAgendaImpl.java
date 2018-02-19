@@ -21,6 +21,11 @@ public class PhoneAgendaImpl implements PhoneAgenda {
     public int getChangingPoint() {
 
         int index = 0;
+
+        if(partyList.length == 1){
+            return index;
+        }
+
         for(int x = 0; x <= partyList.length; x++){
 
             String current = partyList[x];
