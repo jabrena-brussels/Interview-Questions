@@ -72,4 +72,12 @@ public class PhoneAgendaTest {
         final PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void emptyListTest(){
+
+        final String[] partyList = {};
+
+        final PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
+    }
+
 }
