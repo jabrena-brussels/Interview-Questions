@@ -80,4 +80,16 @@ public class PhoneAgendaTest {
         final PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
     }
 
+    @Test
+    public void partyListWithYourBestFriendTest(){
+
+        final String[] partyList = {"Adam"};
+
+        final PhoneAgenda phoneAgenda = new PhoneAgendaImpl(partyList);
+        final int index = phoneAgenda.getChangingPoint();
+
+        assertThat(index, is(0));
+        assertThat(partyList[index], is("Adam"));
+    }
+
 }
