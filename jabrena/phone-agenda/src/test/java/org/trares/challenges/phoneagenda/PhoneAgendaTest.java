@@ -10,6 +10,28 @@ import static org.hamcrest.Matchers.is;
 @RunWith(JUnit4.class)
 public class PhoneAgendaTest {
 
+    final String[] originalPartyList = {
+            "George",
+            "Gregory",
+            "Hugo",
+            "James",
+            "Julia",
+            "Lara",
+            "Noah",
+            "Pamela",
+            "Paul",
+            "Pauline",
+            "Sandra",
+            "Salima",
+            "Tudor",
+            "Adam", //<--> switching point
+            "Alesia",
+            "Bridget",
+            "Charlie",
+            "Celine",
+            "Diane",
+            "Fabio" };
+
     @Test
     public void getChaningPointTest(){
 
@@ -24,8 +46,8 @@ public class PhoneAgendaTest {
         "Pamela",
         "Paul",
         "Pauline",
-        "Sandra",
         "Salima",
+        "Sandra",
         "Tudor",
         "Adam", //<--> switching point
         "Alesia",
@@ -39,7 +61,7 @@ public class PhoneAgendaTest {
         final int index = phoneAgenda.getChangingPoint();
 
         assertThat(index, is(13));
-
+        assertThat(partyList[index], is("Adam"));
     }
 
 }
