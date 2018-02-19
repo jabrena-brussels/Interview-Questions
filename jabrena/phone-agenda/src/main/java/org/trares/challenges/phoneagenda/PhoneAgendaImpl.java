@@ -26,7 +26,7 @@ public class PhoneAgendaImpl implements PhoneAgenda {
             return index;
         }
 
-        for(int x = 0; x <= partyList.length; x++){
+        for(int x = 0; x < partyList.length -1; x++){
 
             String current = partyList[x];
             String next = partyList[x+1];
