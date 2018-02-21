@@ -4,12 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.trares.challenges</groupId>
-	<artifactId>sumTwoNumbers</artifactId>
+	<artifactId>jabrena</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
-	<name>sumTwoNumbers</name>
+	<name>jabrena</name>
 	<description>Demo project for Spring Boot</description>
+
+	<modules>
+		<module>in-flight-entertainment-system</module>
+		<module>phone-agenda</module>
+		<module>sum-two-numbers</module>
+	</modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -27,14 +33,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.16.20</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
