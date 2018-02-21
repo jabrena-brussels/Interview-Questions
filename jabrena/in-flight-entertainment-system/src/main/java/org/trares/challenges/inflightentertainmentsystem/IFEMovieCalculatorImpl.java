@@ -9,7 +9,7 @@ public class IFEMovieCalculatorImpl implements IFEMovieCalculator {
 
     public IFEMovieCalculatorImpl(final int[] movieCatalog) {
 
-        if((movieCatalog == null) || (movieCatalog.length == 0)) {
+        if ((movieCatalog == null) || (movieCatalog.length == 0)) {
             LOGGER.error("Bad movie catalog provided");
             throw new IllegalArgumentException("Bad movie catalog provided");
         }
@@ -20,26 +20,32 @@ public class IFEMovieCalculatorImpl implements IFEMovieCalculator {
     @Override
     public boolean exist2MoviesForFlight(final int flightTime) {
 
-        if(movieCatalog.length < 2){
+        if (movieCatalog.length < 2) {
             return false;
         }
 
         boolean result = false;
 
-        for(int i = 0; i < movieCatalog.length; i++) {
+        for (int i = 0; i < movieCatalog.length; i++) {
 
-            for(int j = 0; j < movieCatalog.length; j++) {
+            for (int j = 0; j < movieCatalog.length; j++) {
 
                 //Optimization to not check the same movie
-                if(j==i) {
+                if (j==i) {
                     continue;
                 }
 
                 int moviesSum = movieCatalog[i] + movieCatalog[j];
-                if(moviesSum == flightTime) {
+                if (moviesSum == flightTime) {
+                    LOGGER.info("Detected one Match with Movie with Index {} & Index {}", i, j);
                     result = true;
                     break;
                 }
+            }
+
+            //Optimization to break both loop
+            if (result) {
+                break;
             }
         }
 
