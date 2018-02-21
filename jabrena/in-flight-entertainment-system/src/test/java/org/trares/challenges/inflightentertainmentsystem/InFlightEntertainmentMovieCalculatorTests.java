@@ -15,11 +15,11 @@ public class InFlightEntertainmentMovieCalculatorTests {
 
 		final int flightTime = 135;//LON-MAD (2:15h)
 		final int[] movieCatalog = {
-			90,
-			45
+			90, // RM vs BCN
+			45  // Champions League Weekly Summary
 		};
 
-		final InFlightEntertainmentMovieCalculator ifem = new InFlightEntertainmentSystemImpl(movieCatalog);
+		final IFEMovieCalculator ifem = new IFEMovieCalculatorImpl(movieCatalog);
 		final boolean result = ifem.exist2MoviesForFlight(flightTime);
 
 		assertThat(result, is(true));
